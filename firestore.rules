@@ -1,0 +1,51 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Users collection
+    match /users/{userId} {
+      allow read: if request.auth != null &&
+        (request.auth.uid == userId || isStaff());
+      allow create: if request.auth != null &&
+        request.auth.uid == userId;
+      allow update: if request.auth != null &&
+        (request.auth.uid == userId || isStaff());
+    }
+
+    // Collaborators collection
+    match /collaborators/{collabId} {
+      allow read: if request.auth != null;
+      allow write: if isStaff();
+    }
+
+    // Bookings collection
+    match /bookings/{bookingId} {
+      allow read: if request.auth != null &&
+        (resource.data.userId == request.auth.uid || isStaff());
+      allow create: if request.auth != null &&
+        request.resource.data.userId == request.auth.uid;
+      allow update, delete: if request.auth != null &&
+        (resource.data.userId == request.auth.uid || isStaff());
+    }
+
+    // Institutions collection
+    match /institutions/{institutionId} {
+      allow read: if request.auth != null;
+      allow write: if isStaff();
+    }
+
+    // Services collection
+    match /services/{serviceId} {
+      allow read: if request.auth != null;
+      allow write: if isStaff();
+    }
+
+    // Helper function to check admin/staff role
+    function isStaff() {
+      let role = get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role;
+      return request.auth != null &&
+        (role == 'admin' || role == 'atendente' || role == 'supervisor' || role == 'proprietario');
+    }
+  }
+}

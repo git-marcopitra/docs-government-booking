@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <rect width="400" height="300" rx="12" fill="#FFF8E6"/>
+  <rect x="120" y="60" width="160" height="120" rx="8" fill="#FFA800" opacity="0.15"/>
+  <rect x="140" y="80" width="120" height="20" rx="4" fill="#FFA800" opacity="0.3"/>
+  <rect x="140" y="110" width="80" height="12" rx="3" fill="#FFA800" opacity="0.2"/>
+  <rect x="140" y="130" width="100" height="12" rx="3" fill="#FFA800" opacity="0.2"/>
+  <rect x="140" y="150" width="60" height="12" rx="3" fill="#FFA800" opacity="0.2"/>
+  <circle cx="200" cy="230" r="30" fill="#FFA800" opacity="0.1"/>
+  <path d="M188 230 L198 240 L215 220" stroke="#FFA800" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="200" y="280" text-anchor="middle" fill="#FFA800" font-size="12" font-family="sans-serif" opacity="0.6">Agendamento</text>
+</svg>
