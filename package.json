@@ -1,7 +1,7 @@
 {
   "name": "book-gov-booking",
   "version": "1.0.0",
-  "description": "Government Booking System - Agendamento de serviços governamentais",
+  "description": "Portal Agenda - Agendamento de serviços governamentais",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

@@ -3,9 +3,9 @@ import { AuthProvider } from "@/contexts/auth-context";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Gov Booking - Agendamento de Serviços Governamentais",
+  title: "Portal Agenda - Agendamento de Serviços Governamentais",
   description:
-    "Plataforma de agendamento de serviços governamentais para cidadãos angolanos.",
+    "Portal Agenda — Plataforma de agendamento de serviços governamentais para cidadãos angolanos.",
   icons: {
     icon: "/icon.png",
   },
